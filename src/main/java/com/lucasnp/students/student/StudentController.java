@@ -1,5 +1,6 @@
 package com.lucasnp.students.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,11 +13,18 @@ import java.util.List;
 @RequestMapping(path = "api/v1/students")
 public class StudentController {
 
+    private final StudentService studentService;
+
+    // Autowired will instantiate studentService when needed (new StudentService())
+    // and injected to constructor
+    @Autowired
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
     @GetMapping
     public List<Student> getStudents() {
-        return List.of(
-                new Student(1L, "Jane", "jane@mail.com", LocalDate.of(1997, Month.APRIL, 5), 23)
-        );
+        return  studentService.getAllStudents();
     }
 
 }
