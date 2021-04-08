@@ -4,7 +4,7 @@
 ### Project Files Info
 - Api Layer => StudentController
 - Business Layer => StudentService
-- Data Acces Layer => StudentDAO
+- Data Acces Layer => StudentRepository
   
 - Model => Student class
 
