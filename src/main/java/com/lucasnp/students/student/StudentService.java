@@ -3,8 +3,6 @@ package com.lucasnp.students.student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 // We use @Service or @Component to say that student service is a
